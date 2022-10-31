@@ -1,0 +1,136 @@
+@import '../../App.scss';
+
+
+.right-bar {
+    @include themify($themes) {
+    flex: 3;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    background-color: themed('bgSoft');
+
+    @include mobile {
+        display: none;
+    }
+    @include tablet {
+        display: none;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .container {
+        padding: 20px;
+
+        .item {
+            box-shadow: 0 0 15px 1px rgba(0,0,0,0.09);
+            padding: 20px;
+            margin-bottom: 20px;
+    background-color: themed('bg');
+
+            span {
+                color: themed('textColor');
+
+            }
+
+            .user {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 20px 0;
+
+
+                .user-info {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    position: relative;
+
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    .online {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        background-color: limegreen;
+                        position: absolute;
+                        top: 0;
+                        left: 30px;
+                    }
+
+                    p{
+                        color: themed('textColor');
+
+                        span {
+                            margin-right: 5px;
+                            color: themed('textColorSoft');
+
+                        }
+                    }
+
+                    span {
+                        margin-left: 10px;
+                        font-weight: 500;
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    button {
+                        border: none;
+                        padding: 7px 10px;
+                        color: white;
+                        cursor: pointer;
+
+                        &:first-child {
+                            align-items: center;
+                            background-color: #06f;
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 24px;
+                            min-width: 80px;
+                            padding: 0 17px;
+                            transition: all .3s;;
+                        }
+
+                        &:first-child:hover {
+                            background-color: #3385ff;
+                        }
+                        &:last-child {
+                            align-items: center;
+                            background-color: #CF0A0A;
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 24px;
+                            min-width: 80px;
+                            padding: 0 17px;
+                            transition: all .3s;;
+                        }
+
+                        &:last-child:hover {
+                            background-color: #ff3333;
+                        }
+
+                        // @media (min-width: 768px) {
+                        // &:first-child {
+                        //     min-width: 170px;
+                        // }
+                        // }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
