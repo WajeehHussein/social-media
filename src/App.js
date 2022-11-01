@@ -49,14 +49,14 @@ function App() {
         }
       ]
     },
-    {
-      path:'/login',
-      element: <Login />
-    },
-    {
-      path:'/register',
-      element: <Register />
-    },
+    // {
+    //   path:'/login',
+    //   element: <Login />
+    // },
+    // {
+    //   path:'/register',
+    //   element: <Register />
+    // },
   ]);
   return (
     <div className="App">
