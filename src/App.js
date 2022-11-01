@@ -24,20 +24,21 @@ function App() {
     );
   };
   
-  const ProtectedRoute = ({children}) =>{
-    if(!currentUser) {
-      return <Navigate to='/login' />;
-    }
-    return children;
-  }
+  // const ProtectedRoute = ({children}) =>{
+  //   if(!currentUser) {
+  //     return <Navigate to='/login' />;
+  //   }
+  //   return children;
+  // }
 
   const router = createBrowserRouter([
     {
       path:'/social-media',
       element: (
-      <ProtectedRoute>
+      // <ProtectedRoute>
         <Layout />
-      </ProtectedRoute>),
+      // </ProtectedRoute>
+      ),
       children:[
         {
           path:"/social-media",
