@@ -33,18 +33,18 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path:'/',
+      path:'/social-media',
       element: (
       <ProtectedRoute>
         <Layout />
       </ProtectedRoute>),
       children:[
         {
-          path:"/",
+          path:"/social-media",
           element: <Home />
         },
         {
-          path:"/profile/:id",
+          path:"/social-media/profile/:id",
           element: <Profile />
         }
       ]
