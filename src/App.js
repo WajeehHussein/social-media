@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { DarkModeContext } from './context/darkModeContext';
 import { AuthContext } from './context/authContext';
 function App() {
-  // const {currentUser} =useContext(AuthContext);
+  const {currentUser} =useContext(AuthContext);
   const {darkMode} = useContext(DarkModeContext);
 
   const Layout = () => {
@@ -24,40 +24,39 @@ function App() {
     );
   };
   
-  // const ProtectedRoute = ({children}) =>{
-  //   if(!currentUser) {
-  //     return <Navigate to='/login' />;
-  //   }
-  //   return children;
-  // }
+  const ProtectedRoute = ({children}) =>{
+    if(!currentUser) {
+      return <Navigate to='/login' />;
+    }
+    return children;
+  }
 
   const router = createBrowserRouter([
     {
-      path:'/social-media',
+      path:'/',
       element: (
-      // <ProtectedRoute>
+      <ProtectedRoute>
         <Layout />
-      // </ProtectedRoute>
-      ),
+      </ProtectedRoute>),
       children:[
         {
-          path:"/social-media",
+          path:"/",
           element: <Home />
         },
         {
-          path:"/social-media/profile/:id",
+          path:"/profile/:id",
           element: <Profile />
         }
       ]
     },
-    // {
-    //   path:'/login',
-    //   element: <Login />
-    // },
-    // {
-    //   path:'/register',
-    //   element: <Register />
-    // },
+    {
+      path:'/login',
+      element: <Login />
+    },
+    {
+      path:'/register',
+      element: <Register />
+    },
   ]);
   return (
     <div className="App">
