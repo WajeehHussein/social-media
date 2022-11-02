@@ -1,6 +1,6 @@
 import './App.scss'
 import {Home, Login, Profile, Register} from "./pages";
-import { createBrowserRouter,RouterProvider,Outlet, Navigate} from 'react-router-dom'
+import { createBrowserRouter,RouterProvider,Outlet, Route, Routes} from 'react-router-dom'
 import { LeftBar,Navbar, RightBar } from './components';
 import { useContext } from 'react';
 import { DarkModeContext } from './context/darkModeContext';
