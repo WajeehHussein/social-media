@@ -1,6 +1,6 @@
 import './App.scss'
-import {Home, Login, Profile, Register} from "./pages";
-import { createBrowserRouter,RouterProvider,Outlet, Route, Routes} from 'react-router-dom'
+import {Home, Profile} from "./pages";
+import { createBrowserRouter,RouterProvider,Outlet} from 'react-router-dom'
 import { LeftBar,Navbar, RightBar } from './components';
 import { useContext } from 'react';
 import { DarkModeContext } from './context/darkModeContext';
@@ -40,7 +40,7 @@ function App() {
       </ProtectedRoute>),
       children:[
         {
-          path:"/",
+          path:"/*",
           element: <Home />
         },
         {
@@ -49,14 +49,7 @@ function App() {
         }
       ]
     },
-    // {
-    //   path:'/login',
-    //   element: <Login />
-    // },
-    // {
-    //   path:'/register',
-    //   element: <Register />
-    // },
+
   ]);
   return (
     <div className="App">
